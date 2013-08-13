@@ -1,0 +1,12 @@
+Config { font = "xft:DejaVu Sans Mono:pixelsize=12"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = TopW L 100 
+       , commands = [ Run Date "%{%_d %b %H:%M" "date" 10
+                    , Run Battery ["-t","<left>%","-L","50","-H","75","-h","green","-n","yell","-l","red"] 600
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ Batt: %battery%  <fc=#ff0000>%date%</fc> "
+       }

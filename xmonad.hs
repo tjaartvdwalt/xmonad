@@ -10,7 +10,7 @@ import qualified Data.Map        as M
 -- certain contrib modules.
 --
 myTerminal      = "urxvt"
- 
+
 -- myModMask       = mod1Mask --left alt
 myModMask       = mod4Mask --windows key
 myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
