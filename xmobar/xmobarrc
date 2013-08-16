@@ -1,14 +1,15 @@
-Config { font = "xft:DejaVu Sans Mono:pixelsize=12"
+Config { font = "xft:Ubuntu Mono:pixelsize=15"
        , bgColor = "black"
        , fgColor = "grey"
        , position = TopW L 100 
-       , commands = [ Run Date "%{%_d %b %H:%M" "date" 10
-                    , Run Battery ["-t","<left>%  / <timeleft>","-h","green","-l","red"] 10
-                    , Run Com "~/.xmonad/xmobar/scripts/netctl.sh" [] "netctl" 50
-                    , Run Com "~/.xmonad/xmobar/scripts/volume.sh" [] "volume" 10
+       , commands = [ Run Date "%{%_d %b %H:%M" "date" 100
+                    , Run Battery ["-t","<left>%","-h","green","-l","red"] 300
+                    , Run Com "~/.xmonad/xmobar/scripts/volume.sh" [] "volume" 50 
+                    , Run Com "/usr/bin/netctl-auto" ["current"] "netctl" 50 
+                    , Run Com "/usr/bin/dropbox" ["status"] "dropbox" 50
                     , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{<fc=#ffff33>Net:</fc> %netctl% <fc=#00ff00>|</fc> <fc=#ffff33>Vol:</fc> %volume% <fc=#00ff00>|</fc> <fc=#ffff33>Batt:</fc> %battery% <fc=#00ff00>|</fc>  <fc=#ff0000>%date%</fc> "
+       , template = "%StdinReader% }{<fc=#ffff33>Dropbox:</fc> %dropbox% <fc=#00ff00>|</fc> <fc=#ffff33>Net:</fc> %netctl% <fc=#00ff00>|</fc> <fc=#ffff33>Vol:</fc> %volume% <fc=#00ff00>|</fc> <fc=#ffff33>Batt:</fc> %battery% <fc=#00ff00>|</fc>  %date% "
        }
