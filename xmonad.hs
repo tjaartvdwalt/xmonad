@@ -41,7 +41,10 @@ defaults = defaultConfig {
 
 } `additionalKeys`
     [ ((mod4Mask, xK_l), spawn "xscreensaver-command -lock"),
-      ((0, xF86XK_AudioRaiseVolume ),  safeSpawn "amixer" ["-q", "set", "Master", "2+"]),
-      ((0, xF86XK_AudioLowerVolume ), safeSpawn "amixer" ["-q", "set", "Master", "2-"]),
-      ((0, xF86XK_AudioMute ), safeSpawn "amixer" ["-q", "set", "Master", "toggle"])
+      ((0, xF86XK_AudioRaiseVolume ),  safeSpawn "amixer" ["-q", "set", "Master", "1000+"]),
+      ((0, xF86XK_AudioLowerVolume ), safeSpawn "amixer" ["-q", "set", "Master", "1000-"]), 
+      ((0, xF86XK_AudioMute ), safeSpawn "amixer" ["-q", "set", "Master", "toggle"]),
+      ((0, xF86XK_AudioNext ), safeSpawn "cmus-remote" ["--next"]),
+      ((0, xF86XK_AudioPlay ), safeSpawn "cmus-remote" ["--pause"]),
+      ((0, xF86XK_AudioPrev ), safeSpawn "cmus-remote" ["--prev"])
     ]

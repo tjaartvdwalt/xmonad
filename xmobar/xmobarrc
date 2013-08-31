@@ -3,9 +3,9 @@ Config { font = "xft:Ubuntu Mono:pixelsize=15"
        , fgColor = "grey"
        , position = TopW L 100 
        , commands = [ Run Date "%{%_d %b %H:%M" "date" 100
-                    , Run Battery ["-t","<left>%","-h","green","-l","red"] 300
-                    , Run Com "~/.xmonad/xmobar/scripts/volume.sh" [] "volume" 50 
-                    , Run Com "/usr/bin/netctl-auto" ["current"] "netctl" 50 
+                    , Run Battery ["-t","<watts>W  <left>%","-h","green","-l","red"] 20
+                    , Run Com "~/.xmonad/xmobar/scripts/volume.sh" [] "volume" 10
+                    , Run Com "/usr/bin/netctl-auto" ["current"] "netctl" 100
                     , Run Com "/usr/bin/dropbox" ["status"] "dropbox" 50
                     , Run StdinReader
                     ]
